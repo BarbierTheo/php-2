@@ -1,8 +1,7 @@
 <?php
 
-    $mode = true;
-    // true = light, false = dark
-    $mode == true ? $color = "light" : $color = "dark";
+$dark_mode = true;
+// true = light, false = dark
 
 ?>
 
@@ -25,12 +24,17 @@
             background-color: light-grey;
             border: 1px solid black;
         }
+        p {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
-    <div id="myElement" class="<?= $color ?>">
+    <input type="checkbox" id="dark_mode" name="dark_mode" <?= $dark_mode == true ? "checked" : "" ?>>
+    <label for="dark_mode">dark mode</label>
+    <div id="myElement" class="<?= $dark_mode == true ? "dark" : "light" ?>">
         <p>Hello World</p>
     </div>
 
